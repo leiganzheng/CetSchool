@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 leiganzheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@interface MainViewController : JXBaseViewController <UITableViewDataSource ,UITableViewDelegate>
+@interface MainViewController : JXBaseViewController
 
 @end

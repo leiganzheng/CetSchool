@@ -21,6 +21,7 @@
 		716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857D1AD9037700B3FC22 /* SettingViewController.m */; };
 		716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */; };
 		716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85841AD919EF00B3FC22 /* CourseCell.m */; };
+		717CBFAD1AEBDF3000E4AB09 /* DataMannagerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 717CBFAC1AEBDF3000E4AB09 /* DataMannagerCenter.m */; };
 		718D30B91ADC01AB008C1D42 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718D30B81ADC01AB008C1D42 /* AboutViewController.m */; };
 		71A26F081ADB511D00191E67 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A26F071ADB511D00191E67 /* STAlertView.m */; };
 		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
@@ -92,6 +93,8 @@
 		716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+StoryBoard.m"; sourceTree = "<group>"; };
 		716A85831AD919EF00B3FC22 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		716A85841AD919EF00B3FC22 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		717CBFAB1AEBDF3000E4AB09 /* DataMannagerCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMannagerCenter.h; sourceTree = "<group>"; };
+		717CBFAC1AEBDF3000E4AB09 /* DataMannagerCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMannagerCenter.m; sourceTree = "<group>"; };
 		718D30B71ADC01AB008C1D42 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		718D30B81ADC01AB008C1D42 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		71A26F061ADB511D00191E67 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 		BBE16EFB1AD7AE7C000B150D /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				717CBFAB1AEBDF3000E4AB09 /* DataMannagerCenter.h */,
+				717CBFAC1AEBDF3000E4AB09 /* DataMannagerCenter.m */,
 			);
 			name = Handler;
 			sourceTree = "<group>";
@@ -593,6 +598,7 @@
 				BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */,
 				BB62FD711ADE30FA00B7B7A6 /* LoginViewController.m in Sources */,
 				71C04FC31ADA7E8B00CAA2FD /* MyCollectionViewController.m in Sources */,
+				717CBFAD1AEBDF3000E4AB09 /* DataMannagerCenter.m in Sources */,
 				71C04FC91ADA801D00CAA2FD /* RecommendViewController.m in Sources */,
 				71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */,
 				71C04FBB1ADA7B1B00CAA2FD /* DownLoadTableViewCell.m in Sources */,

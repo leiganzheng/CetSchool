@@ -75,7 +75,7 @@
         CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
         CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
         CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
-        leftVC.view.transform = lconT;
+//        leftVC.view.transform = lconT;
     };
     
     [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];

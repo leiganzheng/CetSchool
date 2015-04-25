@@ -13,9 +13,18 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #ifdef __OBJC__
 
-    #import "Define.h"
-    #import "UIResponder+StoryBoard.h"
-    #import "JXBaseViewController.h"
+#import "Define.h"
+#import "UIResponder+StoryBoard.h"
+#import "JXBaseViewController.h"
+#import <Availability.h>
+#import "AFNetworking.h"
+#import "Define.h"
+#import "ReactiveCocoa.h"
+#import "RACEXTScope.h"
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #endif
 
 #endif

@@ -11,22 +11,19 @@
 #import "CourseViewController.h"
 #import "CourseDetailViewController.h"
 #import "SliderViewController.h"
-#import "STAlertView.h"
 #import "CourseTableViewCell.h"
 #import "SearchController.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) STAlertView *stAlertView;
-@property (nonatomic,strong)   SearchController *searchController;
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
-    self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.dataArray = @[@"快速智能练习",@"专项智能练习",@"组卷模考",@"真题模考",@"全真模考",@"能力评估报告"];
     [self initSubviews];
 }
 
@@ -35,110 +32,38 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_dataArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"Information";
-    CourseTableViewCell *cell = (CourseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    if (cell == nil)
-    {
-        // Use the default cell style.
-        cell = (CourseTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CourseTableViewCell" owner:self options:nil] objectAtIndex:0];
-    }
-    // Set up the cell.
-//    cell.textLabel.text= self.dataArray[indexPath.row];
-    return cell;
-}
-
-
-#pragma mark - UITableViewDelegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CourseDetailViewController *latestVC = [CourseDetailViewController CreateFromMainStoryboard];
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:latestVC animated:YES];
-
-}
-
-#pragma mark - Action Method
-- (void)lastestButtonAction{
-    
-    LatestViewController *latestVC = [LatestViewController CreateFromMainStoryboard];
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:latestVC animated:YES];
-    
-}
-
-- (void)courseButtonAction{
-    CourseViewController *latestVC = [CourseViewController CreateFromMainStoryboard];
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:latestVC animated:YES];
-    
-}
-
-- (void)searchButtonAction{
-//        self.stAlertView = [[STAlertView alloc] initWithTitle:@"Alert view with a textfield"
-//                                                      message:@"I'm a native UIAlertView with a textfiled."
-//                                                textFieldHint:@"What do you think about me?"
-//                                               textFieldValue:nil
-//                                            cancelButtonTitle:@"Cancel"
-//                                            otherButtonTitles:@"Store"
-//                            
-//                                            cancelButtonBlock:^{
-//                                                NSLog(@"Please, give me some feedback!");
-//                                            } otherButtonBlock:^(NSString * result){
-//                                                NSLog(@" You have said %@, but I can't store it :( . If you want, you can send it to me at hello@nestor.cat or via twitter @NestorMalet!", result);
-//                                            }];
-    _searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
-        
-    } cancel:nil];
-    [_searchController becomeFirstResponder];
-
-}
-
-- (void)userLogoButtonAction{
-    [[SliderViewController sharedSliderController]showLeftViewController];
-}
-
 #pragma mark - Private Method
 - (void)initSubviews{
     
     CGFloat heigt = 24;
     
-    UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 242)];
-    headerV.backgroundColor = [UIColor lightGrayColor];
+    UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 66)];
+    headerV.backgroundColor = kCyColorFromRGB(35, 181, 236);
     [self.view addSubview:headerV];
+   
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.frame = CGRectMake(0, heigt, 40, 40);
+    leftBtn.backgroundColor = [UIColor redColor];
+    leftBtn.layer.cornerRadius = leftBtn.frame.size.width/2;
+    leftBtn.layer.masksToBounds = YES;
+    [leftBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [headerV addSubview:leftBtn];
     
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 66)];
-    v.backgroundColor = kCyColorFromRGB(35, 181, 236);
-    [headerV addSubview:v];
+    leftBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            [[SliderViewController sharedSliderController]showLeftViewController];
+        return [RACSignal empty];
+    }];
     
-    UILabel *userName= [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2-40, heigt, 80, 40)];
-    userName.text = @"建迅网校";
-    userName.textAlignment = NSTextAlignmentCenter;
-    userName.font = [UIFont systemFontOfSize:20];
-    userName.textColor =  kCyColorFromRGB(255, 253, 254);
-    userName.backgroundColor = [UIColor clearColor];
-    [v addSubview:userName];
     
-    UIButton *userLogo = [UIButton buttonWithType:UIButtonTypeCustom];
-    userLogo.frame = CGRectMake(0, heigt, 40, 40);
-    userLogo.backgroundColor = [UIColor redColor];
-    userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
-    userLogo.layer.masksToBounds = YES;
-    [userLogo setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-
-    [userLogo addTarget:self action:@selector(userLogoButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [v addSubview:userLogo];
+    UILabel *lb1= [[UILabel alloc] initWithFrame:CGRectMake(leftBtn.frame.size.width + 15 +leftBtn.frame.origin.x, 6, 80, 40)];
+    lb1.text = @"英语四六级";
+    lb1.textAlignment = NSTextAlignmentCenter;
+    lb1.font = [UIFont systemFontOfSize:20];
+    lb1.textColor =  kCyColorFromRGB(255, 253, 254);
+    lb1.backgroundColor = [UIColor clearColor];
+    lb1.center = CGPointMake(lb1.center.x, leftBtn.center.y);
+    [headerV addSubview:lb1];
+    
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.frame = CGRectMake(kScreenWidth-42, heigt, 40, 40);
@@ -146,34 +71,47 @@
     [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
     
     [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [v addSubview:searchBtn];
+    [headerV addSubview:searchBtn];
     
+    searchBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
+    
+    
+    UILabel *lb= [[UILabel alloc] initWithFrame:CGRectMake(60, 100, 80, 40)];
+    lb.text = @"英语四六级";
+    lb.textAlignment = NSTextAlignmentCenter;
+    lb.font = [UIFont systemFontOfSize:20];
+    lb.textColor =  kCyColorFromRGB(255, 253, 254);
+    lb.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:lb];
+
     
     UIButton *lastestBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    lastestBtn.frame = CGRectMake(0, headerV.frame.size.height-40, kScreenWidth/2-4, 40);
+    lastestBtn.frame = CGRectMake(0,180, kScreenWidth/2-4, 40);
     lastestBtn.backgroundColor = [UIColor redColor];
     [lastestBtn setTitle:@"最新课程" forState:UIControlStateNormal];
-    [lastestBtn addTarget:self action:@selector(lastestButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [lastestBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
     [lastestBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -8, 0, 0)];
-//    [lastestBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, 0, -60, 0)];
-    [headerV addSubview:lastestBtn];
+    [self.view addSubview:lastestBtn];
+    lastestBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
+
     
     
     UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    courseBtn.frame = CGRectMake(kScreenWidth/2+4, headerV.frame.size.height-40, kScreenWidth/2-4, 40);
+    courseBtn.frame = CGRectMake(kScreenWidth/2+4, 150, kScreenWidth/2-4, 40);
     courseBtn.backgroundColor = [UIColor orangeColor];
     [courseBtn setTitle:@"课程分类" forState:UIControlStateNormal];
     [courseBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -8, 0, 0)];
-    [courseBtn addTarget:self action:@selector(courseButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [courseBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [headerV addSubview:courseBtn];
+    [self.view addSubview:courseBtn];
+    courseBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
+
     
-    UITableView *customTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, headerV.frame.size.height, kScreenWidth, kScreenHeight-headerV.frame.size.height)];
-    customTableView.backgroundColor = [UIColor whiteColor];
-    customTableView.delegate = self;
-    customTableView.dataSource = self;
-    [self.view addSubview:customTableView];
 }
 
 @end
