@@ -7,7 +7,6 @@
 //
 
 #import "DownLoadViewController.h"
-#import "Define.h"
 #import "DownLoadTableViewCell.h"
 #define kCellHeight 88
 

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
 @interface ChangPasswordViewController : JXBaseViewController
 
 @end

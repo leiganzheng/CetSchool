@@ -50,6 +50,7 @@
 		BBE7F4431AE6153A008A3ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */; };
 		BBE7F4461AE61557008A3ED6 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4451AE61557008A3ED6 /* PayViewController.m */; };
 		BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB97F21AE6596B00E93D23 /* SearchController.m */; };
+		D94D5A50B39F5582733C8899 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8525C5E1158CC546269B45 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05AB9879D8352998DE13A836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		525EC8AEEEF14CCE179894A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		711FBAB61AD8146900DC8632 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		711FBAB71AD8146900DC8632 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		711FBABA1AD8168A00DC8632 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		BB62FD721ADE346000B7B7A6 /* loginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginView.xib; sourceTree = "<group>"; };
 		BB62FD771ADE371000B7B7A6 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		BB62FD781ADE371000B7B7A6 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		BBCBD1C21AEB8A920025EF99 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		BBD647021AE0D19400253851 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		BBD647031AE0D19400253851 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		BBD647041AE0D19400253851 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		BBE7F4451AE61557008A3ED6 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
 		BBFB97F11AE6596B00E93D23 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		BBFB97F21AE6596B00E93D23 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
+		DA8525C5E1158CC546269B45 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94D5A50B39F5582733C8899 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +266,14 @@
 			name = Left;
 			sourceTree = "<group>";
 		};
+		A705C22AD571C6D0FADF4B22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA8525C5E1158CC546269B45 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB62FD6A1ADE2E9000B7B7A6 /* Vedio */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +304,8 @@
 				BBE16ED01AD7AC8B000B150D /* JXOnlineSchool */,
 				BBE16EEA1AD7AC8B000B150D /* JXOnlineSchoolTests */,
 				BBE16ECF1AD7AC8B000B150D /* Products */,
+				F0CBE0F32EB6AE230F4D4289 /* Pods */,
+				A705C22AD571C6D0FADF4B22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -324,6 +340,7 @@
 			children = (
 				BBE16ED21AD7AC8B000B150D /* Info.plist */,
 				BBE16ED31AD7AC8B000B150D /* main.m */,
+				BBCBD1C21AEB8A920025EF99 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -421,6 +438,15 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		F0CBE0F32EB6AE230F4D4289 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05AB9879D8352998DE13A836 /* Pods.debug.xcconfig */,
+				525EC8AEEEF14CCE179894A0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,9 +454,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE16EF11AD7AC8B000B150D /* Build configuration list for PBXNativeTarget "JXOnlineSchool" */;
 			buildPhases = (
+				98A816866C1911708CE2A006 /* Check Pods Manifest.lock */,
 				BBE16ECA1AD7AC8B000B150D /* Sources */,
 				BBE16ECB1AD7AC8B000B150D /* Frameworks */,
 				BBE16ECC1AD7AC8B000B150D /* Resources */,
+				0094804DA303864762CFF344 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -519,6 +547,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0094804DA303864762CFF344 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98A816866C1911708CE2A006 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBE16ECA1AD7AC8B000B150D /* Sources */ = {
@@ -664,10 +725,13 @@
 		};
 		BBE16EF21AD7AC8B000B150D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05AB9879D8352998DE13A836 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: xi min (XB4PE2625N)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JXOnlineSchool/Prefix.pch";
 				INFOPLIST_FILE = JXOnlineSchool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -677,10 +741,13 @@
 		};
 		BBE16EF31AD7AC8B000B150D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 525EC8AEEEF14CCE179894A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: xi min (XB4PE2625N)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JXOnlineSchool/Prefix.pch";
 				INFOPLIST_FILE = JXOnlineSchool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

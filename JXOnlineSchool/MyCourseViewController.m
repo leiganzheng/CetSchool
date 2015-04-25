@@ -10,7 +10,6 @@
 #import "MyCourseTableViewCell.h"
 #import "VideoPlayerViewController.h"
 #import "DownLoadViewController.h"
-#import "UIResponder+StoryBoard.h"
 
 @interface MyCourseViewController ()
 @property (nonatomic, strong) NSArray *dataArray;

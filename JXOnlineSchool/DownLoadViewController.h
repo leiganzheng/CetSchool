@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
 @interface DownLoadViewController : JXBaseViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end

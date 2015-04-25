@@ -7,7 +7,6 @@
 //
 
 #import "DownLoadTableViewCell.h"
-#import "Define.h"
 
 @implementation DownLoadTableViewCell
 

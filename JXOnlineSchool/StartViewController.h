@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
 typedef void(^Finish)();
 
 @interface StartViewController : JXBaseViewController <UIScrollViewDelegate>

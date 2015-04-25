@@ -8,7 +8,6 @@
 
 #import "CourseDetailViewController.h"
 #import "CommentTableViewCell.h"
-#import "UIResponder+StoryBoard.h"
 #import "PayViewController.h"
 
 typedef enum {

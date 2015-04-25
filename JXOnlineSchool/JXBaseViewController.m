@@ -6,10 +6,8 @@
 //  Copyright (c) 2015年 leiganzheng. All rights reserved.
 //
 
-#import "JXBaseViewController.h"
 #import "UIViewController+Appearence.h"
-#import "UIResponder+StoryBoard.h"
-#import "Define.h"
+
 
 @interface JXBaseViewController ()
 

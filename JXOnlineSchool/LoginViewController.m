@@ -7,9 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "Define.h"
 #import "RegisterViewController.h"
-#import "UIResponder+StoryBoard.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UIView *logiView;

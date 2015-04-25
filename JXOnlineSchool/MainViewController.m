@@ -7,12 +7,10 @@
 //
 
 #import "MainViewController.h"
-#import "Define.h"
 #import "LatestViewController.h"
 #import "CourseViewController.h"
 #import "CourseDetailViewController.h"
 #import "SliderViewController.h"
-#import "UIResponder+StoryBoard.h"
 #import "STAlertView.h"
 #import "CourseTableViewCell.h"
 #import "SearchController.h"

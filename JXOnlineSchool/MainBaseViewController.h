@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
 @interface MainBaseViewController : JXBaseViewController
 
 @end

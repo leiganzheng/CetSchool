@@ -7,10 +7,9 @@
 //
 
 #import "SettingViewController.h"
-#import "Define.h"
 #import "ChangeNicknameViewController.h"
 #import "ChangPasswordViewController.h"
-#import "UIResponder+StoryBoard.h"
+
 #import "AboutViewController.h"
 
 #define kCellHeight 44

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
+
 
 @interface LoginViewController : JXBaseViewController
 

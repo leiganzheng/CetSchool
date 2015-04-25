@@ -7,8 +7,6 @@
 //
 
 #import "LeftViewController.h"
-#import "Define.h"
-#import "UIResponder+StoryBoard.h"
 #import "DownLoadViewController.h"
 #import "SettingViewController.h"
 #import "CustomerServiceViewController.h"

@@ -11,9 +11,7 @@
 #import "MainViewController.h"
 #import "SliderViewController.h"
 #import "UIViewController+MLTransition.h"
-#import "Define.h"
 #import "StartViewController.h"
-#import "UIResponder+StoryBoard.h"
 @interface AppDelegate ()
 
 @end
