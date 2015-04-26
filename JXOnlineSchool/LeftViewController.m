@@ -39,7 +39,8 @@
 
 #pragma mark - Action Method
 - (void)userLogoButtonAction{
-   [self presentViewController:[LoginViewController CreateFromMainStoryboard] animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController CreateFromMainStoryboard]];
+   [self presentViewController:nav animated:YES completion:^{
        
    }];
 }

@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationItem.leftBarButtonItem = nil;
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"loginView" owner:self options:nil];
     self.logiView = views[0];
     self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, self.logiView.frame.size.width, self.logiView.frame.size.height);
