@@ -7,16 +7,17 @@
 //
 
 #import "LeftViewController.h"
-#import "DownLoadViewController.h"
 #import "SettingViewController.h"
-#import "CustomerServiceViewController.h"
 #import "MyCollectionViewController.h"
-#import "MyCourseViewController.h"
-#import "RecommendViewController.h"
 #import "ChangeNicknameViewController.h"
-#import "LoginViewController.h"
+#import "UserCenterViewController.h"
 
 @interface LeftViewController ()
+@property (nonatomic, strong) NSArray *settingWords;
+@property (nonatomic, strong) NSArray *courseWords;
+@property (nonatomic, strong) NSArray *icons;
+@property (nonatomic, strong) UITableView *courTableView;
+@property (nonatomic, strong) UITableView *settingTableView;
 
 @end
 
@@ -25,7 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor =[UIColor clearColor];
+    self.view.backgroundColor = kCyColorFromRGB(42, 42, 42);
+    self.settingWords = @[@"我的练习",@"排行榜",@"用户中心",@"设置",@"题目搜所"];
+    self.icons = @[@"common",@"common",@"common",@"common",@"common"];
+    self.courseWords = @[@"英语四级",@"英语六级"];
     [self initSubviews];
 }
 
@@ -34,182 +38,108 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDataSource
 
-#pragma mark -
-
-#pragma mark - Action Method
-- (void)userLogoButtonAction{
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController CreateFromMainStoryboard]];
-   [self presentViewController:nav animated:YES completion:^{
-       
-   }];
-}
-- (void)nickButtonAction{
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:[ChangeNicknameViewController CreateFromMainStoryboard] animated:YES];
-}
-
-- (void)buttonAction:(UIButton *)sender{
-    JXBaseViewController *VC;
-    switch (sender.tag) {
-        case 1000:
-        {
-            VC = (RecommendViewController *)[RecommendViewController CreateFromMainStoryboard];
-
-        }
-            break;
-        case 1001:
-        {
-            VC = (DownLoadViewController *)[DownLoadViewController CreateFromMainStoryboard];
-
-        }
-            break;
-        case 1002:
-        {
-            VC = (MyCourseViewController *)[MyCourseViewController CreateFromMainStoryboard];
-
-        }
-            break;
-        case 1003:
-        {
-            VC = (MyCollectionViewController *)[MyCollectionViewController CreateFromMainStoryboard];
-            
-        }
-            break;
-
-        case 1004:
-        {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
-            
-        }
-            break;
-
-        case 1005:
-        {
-            VC = (CustomerServiceViewController *)[CustomerServiceViewController CreateFromMainStoryboard];
-            
-        }
-            break;
-
-        default:
-            break;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.courTableView) {
+        return _courseWords.count;
+    }else if (tableView == self.settingTableView){
+        return _settingWords.count;
     }
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:VC animated:YES];
+    return 0;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *MyIdentifier = @"identifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if (cell == nil)
+    {
+        // Use the default cell style.
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        cell.textLabel.textColor = kCyColorFromRGB(210, 210, 210);
+        
+    }
+    // Set up the cell.
+    if (tableView == self.courTableView) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.textLabel.text = _courseWords[indexPath.row];
+        cell.backgroundColor = kCyColorFromRGB(29, 76, 145);
+    }else if (tableView == self.settingTableView){
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.text = _settingWords[indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
+    }
+    
+    return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MainBaseViewController *vc = [[MainBaseViewController alloc] init];
+    if (tableView == self.settingTableView) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                
+            }
+                break;
+            case 1:
+            {
+                
+            }
+                break;
+            case 2:
+            {
+                vc = (MainBaseViewController *)[UserCenterViewController CreateFromMainStoryboard];
+            }
+                break;
+                
+            case 3:
+            {
+                vc = (MainBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            }
+                break;
+            case 4:
+            {
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:^{}];
+    }else if (tableView == self.courTableView){
+        [[SliderViewController sharedSliderController]showLeftViewController];
+    }
+}
+
+
 #pragma mark - Private Method
 - (void)initSubviews{
+    NSInteger width = 220;
+    NSInteger settingTableHeight = 250;
+    self.courTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, width, kScreenHeight-settingTableHeight)];
+    self.courTableView.backgroundColor = [UIColor clearColor];
+    self.courTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.courTableView.delegate = self;
+    self.courTableView.dataSource = self;
+    [self.view addSubview:self.courTableView];
     
-    UIImageView *imageBgV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight)];
-    [self.view addSubview:imageBgV];
-    
-    UIButton *userLogo = [[UIButton alloc] initWithFrame:CGRectMake(70, 56, 80, 80)];
-    userLogo.backgroundColor = [UIColor orangeColor];
-    userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
-    userLogo.layer.masksToBounds = YES;
-    [userLogo addTarget:self action:@selector(userLogoButtonAction) forControlEvents:UIControlEventTouchUpInside];
-
-    [self.view addSubview:userLogo];
-    
-    UILabel *userName= [[UILabel alloc] initWithFrame:CGRectMake(50, 140, 120, 30)];
-    userName.text = @"努力的猫咪";
-    userName.textColor = [UIColor whiteColor];
-    userName.backgroundColor = [UIColor clearColor];
-    userName.font = [UIFont boldSystemFontOfSize:18.0f];
-    userName.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:userName];
-    
-    UIButton *nickBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    nickBtn.frame = CGRectMake(userName.frame.origin.x + userName.frame.size.width-10, userName.frame.origin.y-6, 40, 40);
-    nickBtn.backgroundColor = [UIColor lightGrayColor];
-    [nickBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [nickBtn addTarget:self action:@selector(nickButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nickBtn];
-
-    
-    
-    CGFloat y = 210;
-    CGFloat x = 20;
-    CGFloat with = 90;
-    CGFloat height = 90;
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(x, y, with, height);
-    button.backgroundColor = [UIColor lightGrayColor];
-    button.tag = 1000;
-    [button setTitle:@"浏览记录" forState:UIControlStateNormal];
-    [button setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-        [button setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-        [button setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
-    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.frame = CGRectMake(x + with + 10, y, with, height);
-    button1.backgroundColor = [UIColor redColor];
-    button1.tag = 1001;
-    [button1 setTitle:@"离线下载" forState:UIControlStateNormal];
-    [button1 setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [button1 setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [button1 setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button1 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button1];
-    
-
-    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.frame = CGRectMake(x, y+button.frame.size.width+10, with, height);
-    button2.backgroundColor = [UIColor blueColor];
-    button2.tag = 1002;
-    [button2 setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [button2 setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [button2 setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button2 setTitle:@"我的课程" forState:UIControlStateNormal];
-    [button2 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button2];
-    
-    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button3.frame = CGRectMake(x + with +10,  y+button.frame.size.width+10, with, height);
-    button3.backgroundColor = [UIColor orangeColor];
-    button3.tag = 1003;
-    [button3 setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [button3 setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [button3 setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button3 setTitle:@"我的收藏" forState:UIControlStateNormal];
-    [button3 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button3];
-    
-    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button4.frame = CGRectMake(x, y+button.frame.size.width*2+20, with, height);
-    button4.backgroundColor = [UIColor redColor];
-    button4.tag = 1004;
-    [button4 setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [button4 setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [button4 setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button4 setTitle:@"更多设置" forState:UIControlStateNormal];
-    [button4 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button4];
-    
-    
-    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button5.frame = CGRectMake(x+with+10, y+button.frame.size.width*2+20, with, height);
-    button5.backgroundColor = [UIColor blueColor];
-    button5.tag = 1005;
-    [button5 setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    [button5 setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [button5 setTitleEdgeInsets: UIEdgeInsetsMake(0, -15, -60, 0)];
-
-    [button5 setTitle:@"客服电话" forState:UIControlStateNormal];
-    [button5 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button5];
-
-    
-
-
+    self.settingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kScreenHeight-settingTableHeight+20, width, settingTableHeight)];
+    self.settingTableView.backgroundColor = [UIColor clearColor];
+    self.settingTableView.delegate = self;
+    self.settingTableView.dataSource = self;
+    [self.view addSubview:self.settingTableView];
 }
 
 

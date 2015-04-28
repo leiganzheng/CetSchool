@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeftViewController : JXBaseViewController
+@interface LeftViewController : JXBaseViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

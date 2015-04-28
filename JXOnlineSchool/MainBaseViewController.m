@@ -7,21 +7,24 @@
 //
 
 #import "MainBaseViewController.h"
-#import "SearchController.h"
 @interface MainBaseViewController ()
-@property (nonatomic,strong) SearchController *searchController;
 @end
 
 @implementation MainBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    searchBtn.frame = CGRectMake(0, 0 ,40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
-    [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
+    UIButton *home = [UIButton buttonWithType:UIButtonTypeCustom];
+    home.frame = CGRectMake(0, 0 ,40, 40);
+    home.backgroundColor = [UIColor clearColor];
+    [home setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:home];
+    home.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+        return [RACSignal empty];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-
-#pragma mark - Action Method
-
 #pragma mark - Private Method
-- (void)searchButtonAction {
-     _searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
-        
-    } cancel:nil];
-    [_searchController becomeFirstResponder];
 
-}
 @end

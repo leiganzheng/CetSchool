@@ -14,14 +14,17 @@
 #ifdef __OBJC__
 
 #import "Define.h"
+#import "AppDelegate.h"
 #import "UIResponder+StoryBoard.h"
 #import "JXBaseViewController.h"
+#import "MainBaseViewController.h"
 #import <Availability.h>
 #import "AFNetworking.h"
 #import "Define.h"
 #import "ReactiveCocoa.h"
 #import "RACEXTScope.h"
-
+#import "SliderViewController.h"
+#import "UIViewController+MLTransition.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 

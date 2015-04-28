@@ -9,13 +9,14 @@
 #import "SettingViewController.h"
 #import "ChangeNicknameViewController.h"
 #import "ChangPasswordViewController.h"
-
+#import "LoginViewController.h"
 #import "AboutViewController.h"
 
 #define kCellHeight 44
 
 @interface SettingViewController ()
 @property (nonatomic, strong) NSArray *settingWords;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation SettingViewController
@@ -24,30 +25,34 @@
     [super viewDidLoad];
     self.title = @"更多设置";
     self.settingWords = @[@[@"亲,给个好评",@"意见反馈"], @[@"每日答题提醒",@"夜间模式",@"真题下载"],@[@"清除缓存",@"当前版本"],@[@"应用推荐",@"关于"]];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280,44)];
-    label.backgroundColor = [UIColor redColor];
-    label.textColor = kCyColorFromRGB(255, 255, 255);
-    label.text = @"退出登录";
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont systemFontOfSize:15];
-    self.tableView.tableFooterView = label;
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320,44)];
+    footView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 280,44);
+    btn.backgroundColor = [UIColor redColor];
+    btn.titleLabel.textColor = kCyColorFromRGB(255, 255, 255);
+    [btn setTitle:@"退出登录" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    btn.layer.masksToBounds = YES;
+    btn.layer.cornerRadius = 10;
+    btn.center = footView.center;
+    btn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController CreateFromMainStoryboard]];
+        [[UIApplication sharedApplication] keyWindow].rootViewController = nav;
+
+        return [RACSignal empty];
+    }];
+    [footView addSubview:btn];
+    self.tableView.tableFooterView = footView;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
-    [nav setNavigationBarHidden:NO animated:animated];
-}
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
-    [nav setNavigationBarHidden:YES animated:animated];
-}
-
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -57,7 +62,10 @@
     return [_settingWords[section] count];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"";
+    if (section == 2) {
+          return @"下载历年真题试卷资源，可大幅度降低流量消耗，资源包大小为0.00M，已下载OK。";
+    }
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,7 +78,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     // Set up the cell.
-    if ((indexPath.section == 1 && indexPath.row == 0)||(indexPath.section == 1 && indexPath.row == 1)) {
+    if ((indexPath.section == 1 && indexPath.row == 1)||(indexPath.section == 1 && indexPath.row == 2)) {
         UISwitch *notificationSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(265, 0, 20, 10)];
         notificationSwitch.on = YES;
         notificationSwitch.center = CGPointMake(notificationSwitch.center.x, kCellHeight/2);
@@ -84,33 +92,24 @@
         cell.accessoryView = notificationSwitch1;
         cell.accessoryType = UITableViewCellAccessoryNone;
 
-    }else if (indexPath.section == 0 && indexPath.row == 0){
-        UIImageView *userLogo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-        userLogo.backgroundColor = [UIColor orangeColor];
-        userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
-        userLogo.layer.masksToBounds = YES;
-        cell.accessoryView = userLogo;
-    }else if(indexPath.section == 1 && indexPath.row == 3){
+    }else if(indexPath.section == 1 && indexPath.row == 0){
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = kCyColorFromRGB(0, 0 , 0);
+        label.text = @"未开启";
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:15];
+        cell.accessoryView = label;
+    }else if(indexPath.section == 2 && indexPath.row == 1){
         cell.accessoryType = UITableViewCellAccessoryNone;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = kCyColorFromRGB(0, 0 , 0);
-        label.text = [NSString stringWithFormat:@"V%@",APP_VERSION];
+        label.text = @"升级到最新版本";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:15];
         cell.accessoryView = label;
     }
-//    else if (indexPath.section == 2){
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, cell.contentView.frame.size.height)];
-//        label.backgroundColor = [UIColor redColor];
-//        label.textColor = kCyColorFromRGB(255, 255, 255);
-//        label.text = @"退出登录";
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.font = [UIFont systemFontOfSize:15];
-//        [cell.contentView addSubview:label];
-//        return cell;
-//    }
         cell.textLabel.text = _settingWords[indexPath.section][indexPath.row];
     return cell;
 }
@@ -124,28 +123,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    JXBaseViewController *VC;
-    if (indexPath.section == 0 && indexPath.row == 1) {
-        VC = (ChangeNicknameViewController *)[ChangeNicknameViewController CreateFromMainStoryboard];
-
-    }
-    else if (indexPath.section == 0 && indexPath.row == 2) {
-        VC = (ChangPasswordViewController *)[ChangPasswordViewController CreateFromMainStoryboard];
-    }else if (indexPath.section == 0 && indexPath.row == 0){
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:nil];
-        UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:nil];
-        [alertController addAction:cancelAction];
-        [alertController addAction:deleteAction];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }else if (indexPath.section == 1 && indexPath.row == 2){
-        VC = (AboutViewController *)[AboutViewController CreateFromMainStoryboard];
-    }
-    if (indexPath.section == 2) {
-        [self logout];
-    }
-    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-    [nav pushViewController:VC animated:YES];
 
 }
 
@@ -155,14 +132,6 @@
 
 #pragma mark - private method
 
-- (void)logout{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"您将退出此次登陆，是否确定" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-    [alertController addAction:cancelAction];
-    [alertController addAction:okAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
 
 - (void)swichAction:(UISwitch *)sender{
     if (sender.on) {

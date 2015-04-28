@@ -7,7 +7,6 @@
 //
 
 #import "MyCollectionViewController.h"
-#import "CourseTableViewCell.h"
 @interface MyCollectionViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
 
@@ -51,11 +50,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"Information";
-    CourseTableViewCell *cell = (CourseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil)
     {
         // Use the default cell style.
-        cell = (CourseTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CourseTableViewCell" owner:self options:nil] objectAtIndex:0];
+        cell = (UITableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CourseTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
     
     return cell;

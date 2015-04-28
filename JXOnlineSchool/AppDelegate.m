@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "LeftViewController.h"
 #import "MainViewController.h"
-#import "SliderViewController.h"
-#import "UIViewController+MLTransition.h"
 #import "StartViewController.h"
 @interface AppDelegate ()
 
@@ -66,17 +64,12 @@
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     [SliderViewController sharedSliderController].LeftVC = leftVC;
     [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
-    [SliderViewController sharedSliderController].LeftSContentOffset=275;
+    [SliderViewController sharedSliderController].LeftSContentOffset=220;
     [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 90;
     [SliderViewController sharedSliderController].LeftSContentScale=0.77;
     [SliderViewController sharedSliderController].LeftSJudgeOffset=160;
     [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
-    {
-        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
-        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
-        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
-//        leftVC.view.transform = lconT;
-    };
+    {};
     
     [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
     

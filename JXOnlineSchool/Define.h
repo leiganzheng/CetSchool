@@ -24,5 +24,6 @@
 #define kCyColorFromRGB(r, g, b) [UIColor colorWithRed:((r) / 255.0f) green:((g) / 255.0f) blue:((b) / 255.0f) alpha:(1.0f)]
 // 背景颜色
 #define kBgColor   [UIColor colorWithRed:(242 / 255.0f) green:(242 / 255.0f) blue:(242 / 255.0f) alpha:1.0f]
-
+#define kBlueColor   [UIColor colorWithRed:(162 / 255.0f) green:(201 / 255.0f) blue:(249 / 255.0f) alpha:1.0f]
+#define kGrayColor   [UIColor colorWithRed:(226 / 255.0f) green:(226 / 255.0f) blue:(226 / 255.0f) alpha:1.0f]
 #endif
