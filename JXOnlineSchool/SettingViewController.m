@@ -23,7 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"更多设置";
-    self.settingWords = @[@[@"头像",@"修改昵称",@"更改密码"], @[@"允许2G/3G下缓存视频",@"连续播放",@"关于建迅",@"当前版本",@"意见反馈"],@[@"退出登录"]];
+    self.settingWords = @[@[@"亲,给个好评",@"意见反馈"], @[@"每日答题提醒",@"夜间模式",@"真题下载"],@[@"清除缓存",@"当前版本"],@[@"应用推荐",@"关于"]];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280,44)];
+    label.backgroundColor = [UIColor redColor];
+    label.textColor = kCyColorFromRGB(255, 255, 255);
+    label.text = @"退出登录";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:15];
+    self.tableView.tableFooterView = label;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +55,9 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_settingWords[section] count];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,17 +100,17 @@
         label.font = [UIFont systemFontOfSize:15];
         cell.accessoryView = label;
     }
-    else if (indexPath.section == 2){
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, cell.contentView.frame.size.height)];
-        label.backgroundColor = [UIColor redColor];
-        label.textColor = kCyColorFromRGB(255, 255, 255);
-        label.text = @"退出登录";
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:15];
-        [cell.contentView addSubview:label];
-        return cell;
-    }
+//    else if (indexPath.section == 2){
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, cell.contentView.frame.size.height)];
+//        label.backgroundColor = [UIColor redColor];
+//        label.textColor = kCyColorFromRGB(255, 255, 255);
+//        label.text = @"退出登录";
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.font = [UIFont systemFontOfSize:15];
+//        [cell.contentView addSubview:label];
+//        return cell;
+//    }
         cell.textLabel.text = _settingWords[indexPath.section][indexPath.row];
     return cell;
 }

@@ -69,8 +69,11 @@
     searchBtn.frame = CGRectMake(kScreenWidth-42, heigt, 40, 40);
     searchBtn.backgroundColor = [UIColor orangeColor];
     [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    
-    [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    searchBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        
+        return [RACSignal empty];
+    }];
+
     [headerV addSubview:searchBtn];
     
     searchBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
@@ -88,7 +91,7 @@
 
     
     UIButton *lastestBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    lastestBtn.frame = CGRectMake(0,180, kScreenWidth/2-4, 40);
+    lastestBtn.frame = CGRectMake(0,180, 80, 80);
     lastestBtn.backgroundColor = [UIColor redColor];
     [lastestBtn setTitle:@"最新课程" forState:UIControlStateNormal];
     [lastestBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
@@ -101,7 +104,7 @@
     
     
     UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    courseBtn.frame = CGRectMake(kScreenWidth/2+4, 150, kScreenWidth/2-4, 40);
+    courseBtn.frame = CGRectMake(kScreenWidth/2+4, 150, 80, 80);
     courseBtn.backgroundColor = [UIColor orangeColor];
     [courseBtn setTitle:@"课程分类" forState:UIControlStateNormal];
     [courseBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -8, 0, 0)];
