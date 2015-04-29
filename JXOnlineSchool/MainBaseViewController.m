@@ -17,7 +17,7 @@
     UIButton *home = [UIButton buttonWithType:UIButtonTypeCustom];
     home.frame = CGRectMake(0, 0 ,40, 40);
     home.backgroundColor = [UIColor clearColor];
-    [home setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [home setImage: [UIImage imageNamed: @"home_back_pic_night"] forState: UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:home];
     home.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         [self dismissViewControllerAnimated:YES completion:^{

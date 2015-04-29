@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kCyColorFromRGB(42, 42, 42);
     self.settingWords = @[@"我的练习",@"排行榜",@"用户中心",@"设置",@"题目搜所"];
-    self.icons = @[@"common",@"common",@"common",@"common",@"common"];
+    self.icons = @[@"myPractise_erro_redo_night",@"left_rank_icon",@"left_user_center",@"leftView_setting_default",@"leftView_search_default"];
     self.courseWords = @[@"英语四级",@"英语六级"];
     [self initSubviews];
 }

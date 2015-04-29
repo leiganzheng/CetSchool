@@ -77,8 +77,8 @@
     UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
     do {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-        [UINavigationBar appearance].barTintColor = kCyColorFromRGB(35, 181, 236);
-        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+//        [UINavigationBar appearance].barTintColor = kCyColorFromRGB(35, 181, 236);
+//        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
         NSDictionary *dict=[NSDictionary dictionaryWithObjects:
                             [NSArray arrayWithObjects:kCyColorFromRGB(255, 253, 254),[UIFont boldSystemFontOfSize:20],nil]
                                                        forKeys:

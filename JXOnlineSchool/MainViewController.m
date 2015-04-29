@@ -34,7 +34,7 @@
     
     UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bg.backgroundColor = [UIColor clearColor];
-    bg.image = [UIImage imageNamed:@""];
+    bg.image = [UIImage imageNamed:@"home_960_pic"];
     [self.view addSubview:bg];
     
     UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 66)];
@@ -43,10 +43,10 @@
    
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     leftBtn.frame = CGRectMake(0, heigt, 40, 40);
-    leftBtn.backgroundColor = [UIColor redColor];
+    leftBtn.backgroundColor = [UIColor clearColor];
     leftBtn.layer.cornerRadius = leftBtn.frame.size.width/2;
     leftBtn.layer.masksToBounds = YES;
-    [leftBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [leftBtn setImage: [UIImage imageNamed: @"home_left_btn"] forState: UIControlStateNormal];
     [headerV addSubview:leftBtn];
     
     leftBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
@@ -59,7 +59,7 @@
     lb1.text = @"英语四六级";
     lb1.textAlignment = NSTextAlignmentCenter;
     lb1.font = [UIFont systemFontOfSize:20];
-    lb1.textColor =  kCyColorFromRGB(255, 253, 254);
+    lb1.textColor =  [UIColor blackColor];
     lb1.backgroundColor = [UIColor clearColor];
     lb1.center = CGPointMake(lb1.center.x, leftBtn.center.y);
     [headerV addSubview:lb1];
@@ -67,7 +67,7 @@
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.frame = CGRectMake(kScreenWidth-42, heigt, 40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
+    searchBtn.backgroundColor = [UIColor clearColor];
     [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
     searchBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         
@@ -93,6 +93,7 @@
     NSInteger width = 85;
     NSInteger height = 90;
     NSInteger buttonTag = 100;
+    NSArray *icons = @[@"home_3_default",@"home_2_default",@"home_1_default",@"home_0_default",@"home_9_default",@"home_5_default"];
     for (int i = 0; i<self.dataArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         NSInteger y = 140;
@@ -104,13 +105,14 @@
             y=140*2+height+50;
         }
         button.frame = CGRectMake((i%2)*(width+60)+60,y, width, height);
-        button.backgroundColor = [UIColor redColor];
+        button.backgroundColor = [UIColor clearColor];
         [button.titleLabel setFont:[UIFont systemFontOfSize:14]];
         button.tag = buttonTag +i;
+        button.titleLabel.textColor = [UIColor blackColor];
         [button setTitle:self.dataArray[i] forState:UIControlStateNormal];
-        [button setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-        [button setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-        [button setTitleEdgeInsets: UIEdgeInsetsMake(0, -30, -60, 0)];
+        [button setImage: [UIImage imageNamed: icons[i]] forState: UIControlStateNormal];
+        [button setImageEdgeInsets: UIEdgeInsetsMake(-8, 10, 0, 0)];
+        [button setTitleEdgeInsets: UIEdgeInsetsMake(0, -74, -74, -10)];
         [self.view addSubview:button];
         button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             UIButton *sender = (UIButton *)input;
