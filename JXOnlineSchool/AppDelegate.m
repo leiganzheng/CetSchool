@@ -77,16 +77,16 @@
     UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
     do {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-//        [UINavigationBar appearance].barTintColor = kCyColorFromRGB(35, 181, 236);
-//        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+        [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+        [UINavigationBar appearance].tintColor = [UIColor blackColor];
         NSDictionary *dict=[NSDictionary dictionaryWithObjects:
-                            [NSArray arrayWithObjects:kCyColorFromRGB(255, 253, 254),[UIFont boldSystemFontOfSize:20],nil]
+                            [NSArray arrayWithObjects:kCyColorFromRGB(0, 0, 0),[UIFont boldSystemFontOfSize:20],nil]
                                                        forKeys:
                             [NSArray arrayWithObjects:NSForegroundColorAttributeName,NSFontAttributeName,nil]];
         [UINavigationBar appearance].titleTextAttributes = dict;
     } while(NO);
-    self.window.rootViewController = naviC;
-    [self animationWithVC:naviC];
+    self.window.rootViewController = [SliderViewController sharedSliderController];
+    [self animationWithVC:[SliderViewController sharedSliderController]];
 }
 
 - (void)animationWithVC:(UIViewController *)vc{

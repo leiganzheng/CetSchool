@@ -137,6 +137,7 @@
     
     self.settingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kScreenHeight-settingTableHeight+20, width, settingTableHeight)];
     self.settingTableView.backgroundColor = [UIColor clearColor];
+    self.settingTableView.scrollEnabled = NO;
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
     [self.view addSubview:self.settingTableView];

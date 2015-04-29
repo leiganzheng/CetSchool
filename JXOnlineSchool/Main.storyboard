@@ -28,10 +28,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ocT-WN-SNa" id="OZx-jd-u7E">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-9D-ZD4">
-                                                    <rect key="frame" x="10" y="10" width="54" height="54"/>
-                                                    <color key="backgroundColor" red="0.086274509799999996" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
+                                                <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-9D-ZD4">
+                                                    <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="user_default_photo">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -41,13 +41,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf7-Lb-pn8">
-                                                    <rect key="frame" x="255" y="8" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.086274509799999996" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNh-VW-edd">
                                                     <rect key="frame" x="75" y="60" width="232" height="1"/>
                                                     <color key="backgroundColor" red="1" green="0.37272515950000001" blue="0.49911318269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,10 +61,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-ng-sHM">
-                                                    <rect key="frame" x="243" y="72" width="15" height="15"/>
-                                                    <color key="backgroundColor" red="0.086274509799999996" green="0.87450980389999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
+                                                <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-ng-sHM">
+                                                    <rect key="frame" x="243" y="72" width="13" height="13"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="userAsk">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -93,6 +86,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf7-Lb-pn8">
+                                                    <rect key="frame" x="277" y="8" width="28" height="28"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="signIn_n">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54P-kg-jSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="1150"/>
+            <point key="canvasLocation" x="-99" y="1153"/>
         </scene>
         <!--我的收藏-->
         <scene sceneID="WA7-eH-5Nx">
@@ -208,14 +208,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUn-ej-kQk">
-                                <rect key="frame" x="32" y="301" width="40" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.29362170030000001" blue="0.22717376759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUn-ej-kQk">
+                                <rect key="frame" x="32" y="301" width="34" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Ob8-1u-a2w"/>
                                     <constraint firstAttribute="height" constant="40" id="YhS-D3-al5"/>
                                 </constraints>
-                                <state key="normal" title="忘记密码">
+                                <state key="normal" image="qq_icon_nor">
                                     <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -223,17 +223,18 @@
                                     <action selector="forgetPassWord:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="JY4-60-Gxi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrN-Vw-wxQ">
-                                <rect key="frame" x="249" y="301" width="40" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.29362170030000001" blue="0.22717376759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrN-Vw-wxQ">
+                                <rect key="frame" x="255" y="301" width="34" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2Kq-LG-sZ4"/>
                                     <constraint firstAttribute="width" constant="40" id="9Ru-rf-5Zf"/>
                                 </constraints>
-                                <state key="normal" title="忘记密码">
+                                <state key="normal" image="rr_icon_nor">
                                     <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="rr_icon_press"/>
                                 <connections>
                                     <action selector="forgetPassWord:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="ead-bl-IQY"/>
                                 </connections>
@@ -294,13 +295,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhn-2j-yvM">
-                                <rect key="frame" x="147" y="301" width="40" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.29362170030000001" blue="0.22717376759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="忘记密码">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhn-2j-yvM">
+                                <rect key="frame" x="150" y="301" width="34" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="sina_icon_nor">
                                     <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="sina_icon_press"/>
                                 <connections>
                                     <action selector="forgetPassWord:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="4vh-Jd-MxZ"/>
                                 </connections>
@@ -872,6 +874,16 @@
             <point key="canvasLocation" x="-787" y="2087"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="qq_icon_nor" width="34" height="34"/>
+        <image name="rr_icon_nor" width="34" height="34"/>
+        <image name="rr_icon_press" width="34" height="35"/>
+        <image name="signIn_n" width="28" height="28"/>
+        <image name="sina_icon_nor" width="34" height="34"/>
+        <image name="sina_icon_press" width="34" height="33"/>
+        <image name="userAsk" width="13" height="13"/>
+        <image name="user_default_photo" width="50" height="50"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
