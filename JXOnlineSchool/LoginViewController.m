@@ -38,16 +38,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
-    [nav setNavigationBarHidden:NO animated:animated];
-}
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
-    [nav setNavigationBarHidden:YES animated:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
+//    [nav setNavigationBarHidden:NO animated:animated];
+//}
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    UINavigationController *nav  = (UINavigationController *)[[[UIApplication sharedApplication]keyWindow] rootViewController];
+//    [nav setNavigationBarHidden:YES animated:animated];
+//}
 
 
 //MARK:- Delegate or DataSource
@@ -74,19 +74,19 @@
     [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
     
     
-    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
+//    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
     do {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-        [UINavigationBar appearance].barTintColor = kCyColorFromRGB(35, 181, 236);
-        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+        [UINavigationBar appearance].barTintColor =[UIColor whiteColor];
+        [UINavigationBar appearance].tintColor = [UIColor blackColor];
         NSDictionary *dict=[NSDictionary dictionaryWithObjects:
-                            [NSArray arrayWithObjects:kCyColorFromRGB(255, 253, 254),[UIFont boldSystemFontOfSize:20],nil]
+                            [NSArray arrayWithObjects:kCyColorFromRGB(0, 0, 0),[UIFont boldSystemFontOfSize:20],nil]
                                                        forKeys:
                             [NSArray arrayWithObjects:NSForegroundColorAttributeName,NSFontAttributeName,nil]];
         [UINavigationBar appearance].titleTextAttributes = dict;
     } while(NO);
-    [[UIApplication sharedApplication] keyWindow].rootViewController = naviC;
-    [self animationWithVC:naviC];
+    [[UIApplication sharedApplication] keyWindow].rootViewController = [SliderViewController sharedSliderController];
+    [self animationWithVC:[SliderViewController sharedSliderController]];
 }
 
 - (void)animationWithVC:(UIViewController *)vc{

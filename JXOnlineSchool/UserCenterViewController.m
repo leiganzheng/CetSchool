@@ -9,6 +9,7 @@
 #import "UserCenterViewController.h"
 
 @interface UserCenterViewController ()
+
 @property (nonatomic, strong) NSArray *settingWords;
 @end
 
@@ -41,6 +42,10 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
         }
         // Set up the cell.
+        UIButton *btn = (UIButton *)[cell.contentView viewWithTag:100];
+        btn.layer.masksToBounds=YES;
+        btn.layer.cornerRadius = btn.bounds.size.width/2;
+
         return cell;
 
     }else{
