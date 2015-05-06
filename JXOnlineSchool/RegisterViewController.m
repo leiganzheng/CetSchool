@@ -7,8 +7,14 @@
 //
 
 #import "RegisterViewController.h"
+#import "CourseViewController.h"
+#import "LocationViewController.h"
+#import "FinalRegisterViewController.h"
 
 @interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *locationBtn;
+@property (weak, nonatomic) IBOutlet UIButton *courseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 
 @end
 
@@ -16,7 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.locationBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        [self.navigationController pushViewController:[LocationViewController CreateFromMainStoryboard] animated:NO];
+        return [RACSignal empty];
+    }];
+    self.courseBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        [self.navigationController pushViewController:[CourseViewController CreateFromMainStoryboard] animated:NO];
+        return [RACSignal empty];
+    }];
+    self.nextBtn.rac_command  = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        [self.navigationController pushViewController:[FinalRegisterViewController CreateFromMainStoryboard] animated:NO];
+        return [RACSignal empty];
+    }];
+
+
 }
 
 - (void)didReceiveMemoryWarning {

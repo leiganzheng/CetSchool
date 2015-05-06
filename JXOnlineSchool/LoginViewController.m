@@ -32,6 +32,18 @@
         [self mainView];
         return [RACSignal empty];
     }];
+    self.newuser.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[RegisterViewController CreateFromMainStoryboard]];
+        [self presentViewController:nav animated:NO completion:^{
+            
+        }];
+        return [RACSignal empty];
+    }];
+    self.forgtPassword.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
+
+
 }
 
 - (void)didReceiveMemoryWarning {

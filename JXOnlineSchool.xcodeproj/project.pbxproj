@@ -22,9 +22,13 @@
 		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
 		71C04FC31ADA7E8B00CAA2FD /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FC21ADA7E8B00CAA2FD /* MyCollectionViewController.m */; };
 		71C334FA1AE695E6007C29D6 /* MainBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C334F91AE695E6007C29D6 /* MainBaseViewController.m */; };
+		71FA11BC1AFA56C3006CDBFF /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FA11BB1AFA56C3006CDBFF /* CourseViewController.m */; };
+		71FA11BF1AFA56EE006CDBFF /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FA11BE1AFA56EE006CDBFF /* LocationViewController.m */; };
+		71FA11C21AFA62F9006CDBFF /* FinalRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FA11C11AFA62F9006CDBFF /* FinalRegisterViewController.m */; };
 		BA971AE71ADA6B8C00C06A68 /* ChangPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */; };
 		BB62FD711ADE30FA00B7B7A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB62FD701ADE30FA00B7B7A6 /* LoginViewController.m */; };
 		BB62FD791ADE371000B7B7A6 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB62FD781ADE371000B7B7A6 /* StartViewController.m */; };
+		BB86E3761AFB02DE00EFF41D /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB86E3751AFB02DE00EFF41D /* city.plist */; };
 		BBE16ED41AD7AC8B000B150D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16ED31AD7AC8B000B150D /* main.m */; };
 		BBE16ED71AD7AC8B000B150D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16ED61AD7AC8B000B150D /* AppDelegate.m */; };
 		BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE16EDE1AD7AC8B000B150D /* Images.xcassets */; };
@@ -79,12 +83,19 @@
 		71C04FC21ADA7E8B00CAA2FD /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		71C334F81AE695E6007C29D6 /* MainBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBaseViewController.h; sourceTree = "<group>"; };
 		71C334F91AE695E6007C29D6 /* MainBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBaseViewController.m; sourceTree = "<group>"; };
+		71FA11BA1AFA56C3006CDBFF /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		71FA11BB1AFA56C3006CDBFF /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		71FA11BD1AFA56EE006CDBFF /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		71FA11BE1AFA56EE006CDBFF /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		71FA11C01AFA62F9006CDBFF /* FinalRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalRegisterViewController.h; sourceTree = "<group>"; };
+		71FA11C11AFA62F9006CDBFF /* FinalRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalRegisterViewController.m; sourceTree = "<group>"; };
 		BA971AE51ADA6B8C00C06A68 /* ChangPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangPasswordViewController.h; sourceTree = "<group>"; };
 		BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangPasswordViewController.m; sourceTree = "<group>"; };
 		BB62FD6F1ADE30FA00B7B7A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BB62FD701ADE30FA00B7B7A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BB62FD771ADE371000B7B7A6 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		BB62FD781ADE371000B7B7A6 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		BB86E3751AFB02DE00EFF41D /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		BBCBD1C21AEB8A920025EF99 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		BBE16ECE1AD7AC8B000B150D /* JXOnlineSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXOnlineSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE16ED21AD7AC8B000B150D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +230,12 @@
 				BB62FD781ADE371000B7B7A6 /* StartViewController.m */,
 				BBE7F4411AE6153A008A3ED6 /* RegisterViewController.h */,
 				BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */,
+				71FA11BA1AFA56C3006CDBFF /* CourseViewController.h */,
+				71FA11BB1AFA56C3006CDBFF /* CourseViewController.m */,
+				71FA11BD1AFA56EE006CDBFF /* LocationViewController.h */,
+				71FA11BE1AFA56EE006CDBFF /* LocationViewController.m */,
+				71FA11C01AFA62F9006CDBFF /* FinalRegisterViewController.h */,
+				71FA11C11AFA62F9006CDBFF /* FinalRegisterViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 		BBE16ED11AD7AC8B000B150D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB86E3751AFB02DE00EFF41D /* city.plist */,
 				BBE16ED21AD7AC8B000B150D /* Info.plist */,
 				BBE16ED31AD7AC8B000B150D /* main.m */,
 				BBCBD1C21AEB8A920025EF99 /* Prefix.pch */,
@@ -458,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71361EE01AD825C000051EF9 /* Main.storyboard in Resources */,
+				BB86E3761AFB02DE00EFF41D /* city.plist in Resources */,
 				BBE16EF91AD7ADDF000B150D /* readme in Resources */,
 				BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */,
 			);
@@ -514,11 +533,14 @@
 				71361EDE1AD8247800051EF9 /* UIViewController+MLTransition.m in Sources */,
 				716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */,
 				BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */,
+				71FA11C21AFA62F9006CDBFF /* FinalRegisterViewController.m in Sources */,
 				BB62FD711ADE30FA00B7B7A6 /* LoginViewController.m in Sources */,
 				71C04FC31ADA7E8B00CAA2FD /* MyCollectionViewController.m in Sources */,
 				717CBFAD1AEBDF3000E4AB09 /* DataMannagerCenter.m in Sources */,
 				711FBAB81AD8146900DC8632 /* SliderViewController.m in Sources */,
 				71C334FA1AE695E6007C29D6 /* MainBaseViewController.m in Sources */,
+				71FA11BF1AFA56EE006CDBFF /* LocationViewController.m in Sources */,
+				71FA11BC1AFA56C3006CDBFF /* CourseViewController.m in Sources */,
 				BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */,
 				71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */,
 				711FBABF1AD8169600DC8632 /* MainViewController.m in Sources */,

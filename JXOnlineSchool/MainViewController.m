@@ -92,14 +92,13 @@
     NSInteger scrollViewHeight = kScreenHeight-lb.frame.size.height-headerV.frame.size.height;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, headerV.frame.size.height + 15+20, kScreenWidth, scrollViewHeight)];
-    scrollView.bounces = NO;
-    scrollView.pagingEnabled = YES;
+    scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator =  NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.userInteractionEnabled = YES;
     [self.view addSubview:scrollView];
     scrollView.backgroundColor = [UIColor clearColor];
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, scrollViewHeight+40);
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, scrollViewHeight+1);
     
     NSInteger width = 85;
     NSInteger height = 90;
@@ -107,13 +106,13 @@
     NSArray *icons = @[@"home_3_default",@"home_2_default",@"home_1_default",@"home_0_default",@"home_9_default",@"home_5_default"];
     for (int i = 0; i<self.dataArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        NSInteger y = 0;
+        NSInteger y = 20;
         if (i>=0&&i<=1) {
-            y = 0;
+            y = 20;
         }else if (i>1&&i<=3){
-            y=0+height+40;
+            y=20+height+40;
         }else if(i>3&&i<=5){
-            y=120+height+50;
+            y=140+height+50;
         }
         button.frame = CGRectMake((i%2)*(width+30)+60,y, width, height);
         button.backgroundColor = [UIColor clearColor];
