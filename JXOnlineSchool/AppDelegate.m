@@ -23,12 +23,12 @@
     self.window.backgroundColor =  kCyColorFromRGB(35, 181, 236);
     
     do {
-        [UIApplication sharedApplication].statusBarHidden = YES;
-        StartViewController *VC = [[StartViewController alloc] init];
-        self.window.rootViewController = VC;
-        VC.finish = ^(){
+//        [UIApplication sharedApplication].statusBarHidden = YES;
+//        StartViewController *VC = [[StartViewController alloc] init];
+//        self.window.rootViewController = VC;
+//        VC.finish = ^(){
             [self mainView];
-        };
+//        };
     }while (NO);
     
     [self.window makeKeyAndVisible];
