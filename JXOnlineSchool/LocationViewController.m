@@ -9,11 +9,9 @@
 #import "LocationViewController.h"
 
 @interface LocationViewController ()
-@property (nonatomic, strong) NSArray *settingWords;
-@property (nonatomic, strong) NSArray *cityWords;
 @property (nonatomic, strong) NSArray *provinces;
 @property (nonatomic, strong) NSArray *cities;
-@property (nonatomic, strong) NSArray *states;
+@property (nonatomic, strong) NSMutableArray *states;
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
 @property (weak, nonatomic) IBOutlet UITableView *cityTableView;
 
@@ -23,12 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settingWords = @[@"河南",@"北京",@"武汉"];
-    self.cityWords = @[@"河南",@"北京",@"武汉"];
     self.cityTableView.hidden = YES;
-    self.provinces = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"city.plist" ofType:nil]];
-    self.cities = [[self.provinces objectAtIndex:0] objectForKey:@"cities"];
-    self.states = [[self.provinces objectAtIndex:0] objectForKey:@"state"];
+    [self fecthData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,9 +34,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == self.cityTableView) {
-        return [_cityWords count];
+        return [self.cities count];
     }else if (tableView == self.customTableView) {
-        return [_settingWords count];
+        return [self.states count];
     }
     return 0;
 }
@@ -59,9 +53,9 @@
     // Set up the cell.
     NSString *text;
     if (tableView == self.cityTableView) {
-        text = _cityWords[indexPath.row];
+        text = self.cities[indexPath.row];
     }else if (tableView == self.customTableView) {
-        text = _settingWords[indexPath.row];
+        text = self.states[indexPath.row];
     }
 
     cell.textLabel.text = text;
@@ -76,11 +70,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == self.cityTableView) {
     } else if (tableView == self.customTableView) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+       
         self.customTableView.frame = CGRectMake(0, 0, 112, kScreenHeight);
         self.cityTableView.hidden = NO;
+         self.cities = [[self.provinces objectAtIndex:indexPath.row] objectForKey:@"cities"];
         [self.cityTableView reloadData];
     }
 
@@ -88,5 +84,15 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+#pragma mark -private method
+- (void)fecthData{
+    self.states = [NSMutableArray array];
+    self.provinces = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"city.plist" ofType:nil]];
+   
+    for (NSDictionary *dict in self.provinces) {
+        [self.states addObject:[dict objectForKey:@"state"]];
+    }
+    [self.customTableView reloadData];
 }
 @end
