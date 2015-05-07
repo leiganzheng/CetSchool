@@ -29,7 +29,6 @@
     self.provinces = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"city.plist" ofType:nil]];
     self.cities = [[self.provinces objectAtIndex:0] objectForKey:@"cities"];
     self.states = [[self.provinces objectAtIndex:0] objectForKey:@"state"];
-
 }
 
 - (void)didReceiveMemoryWarning {
