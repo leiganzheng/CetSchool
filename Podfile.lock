@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Mantle (2.0):
+    - Mantle/extobjc (= 2.0)
+  - Mantle/extobjc (2.0)
   - MBProgressHUD (0.9.1)
   - OpenUDID (1.0.0)
   - Reachability (3.2)
@@ -37,6 +40,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Mantle
   - MBProgressHUD
   - OpenUDID
   - Reachability
@@ -46,6 +50,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -53,4 +58,4 @@ SPEC CHECKSUMS:
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SFHFKeychainUtils: 9576b411a79a058f4d5381ace6f3242b9a62e664
 
-COCOAPODS: 0.37.0.beta.1
+COCOAPODS: 0.37.1
