@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -146,6 +146,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6r-gf-0Ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="1074"/>
+        </scene>
+        <!--能力评估报告-->
+        <scene sceneID="Koj-B2-agm">
+            <objects>
+                <viewController storyboardIdentifier="AssessmentViewController" title="能力评估报告" id="2i0-7q-uwF" customClass="AssessmentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2mm-ep-plW"/>
+                        <viewControllerLayoutGuide type="bottom" id="scZ-1a-jcG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8CC-KG-FTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HbO-w4-2cY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="571" y="884"/>
         </scene>
         <!--登录-->
         <scene sceneID="cjL-ag-x3l">
@@ -522,6 +540,42 @@
             </objects>
             <point key="canvasLocation" x="613" y="2040"/>
         </scene>
+        <!--真题模考-->
+        <scene sceneID="cKD-bN-F6j">
+            <objects>
+                <viewController storyboardIdentifier="MoldTestViewController" title="真题模考" id="cJE-7a-lhe" customClass="MoldTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gwd-Fp-jBC"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBE-47-o5M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wcJ-hX-NCL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnP-6c-FYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1330" y="1192"/>
+        </scene>
+        <!--全真模考-->
+        <scene sceneID="Lk2-XQ-exp">
+            <objects>
+                <viewController storyboardIdentifier="AllMoldTestViewController" title="全真模考" id="vW8-YP-4Nx" customClass="AllMoldTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NkZ-ij-LGJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="r8g-rk-EW2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wJN-Zb-E1N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO7-qW-UtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="997"/>
+        </scene>
         <!--考试科目-->
         <scene sceneID="RGU-df-lc2">
             <objects>
@@ -663,6 +717,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcE-2o-Jv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1051" y="2075"/>
+        </scene>
+        <!--快速智能练习-->
+        <scene sceneID="kyc-Cd-Adc">
+            <objects>
+                <viewController storyboardIdentifier="IntelligentPracticeViewController" title="快速智能练习" id="yos-4f-KUH" customClass="IntelligentPracticeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yxn-KO-6bc"/>
+                        <viewControllerLayoutGuide type="bottom" id="ms4-s7-dGo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y0K-ob-5Nb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-JB-ZEh">
+                                <rect key="frame" x="0.0" y="488" width="320" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-0e-Kkn">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                        <state key="normal" image="shijuan_favor_pic">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBp-C5-K1m">
+                                        <rect key="frame" x="160" y="0.0" width="80" height="80"/>
+                                        <state key="normal" image="shijuan_setting_pic">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U8-fT-fQF">
+                                        <rect key="frame" x="240" y="0.0" width="80" height="80"/>
+                                        <state key="normal" image="shijuan_timer">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-tY-SA6">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q87-Jg-BQX">
+                                        <rect key="frame" x="80" y="0.0" width="83" height="80"/>
+                                        <state key="normal" image="shijuan_ka_pic">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKt-Kf-eex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="2469"/>
         </scene>
         <!--关于-->
         <scene sceneID="Gj8-Fg-l1g">
@@ -894,6 +1005,24 @@
             </objects>
             <point key="canvasLocation" x="1387" y="250"/>
         </scene>
+        <!--专项智能练习-->
+        <scene sceneID="qkL-mM-5ur">
+            <objects>
+                <viewController storyboardIdentifier="SpecialPracticeViewController" title="专项智能练习" id="sY0-r2-Tx5" customClass="SpecialPracticeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rjR-kD-F9c"/>
+                        <viewControllerLayoutGuide type="bottom" id="KiT-Ol-c9r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tmS-HN-RRk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukZ-8r-tuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="692"/>
+        </scene>
         <!--设置-->
         <scene sceneID="gOF-LK-LZs">
             <objects>
@@ -967,12 +1096,246 @@
             </objects>
             <point key="canvasLocation" x="-787" y="2087"/>
         </scene>
+        <!--错题练习-->
+        <scene sceneID="C8R-6n-o02">
+            <objects>
+                <viewController storyboardIdentifier="MistakePracticeViewController" title="错题练习" id="jO5-FY-3bu" customClass="MistakePracticeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Mx-61-eQZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8yj-qM-ue7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Zt-0U-HGu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2me-Y8-ST9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga9-6m-2lf">
+                                        <rect key="frame" x="0.0" y="7" width="160" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ln7-rM-k2i"/>
+                                        </constraints>
+                                        <state key="normal" title="真题错题">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downLoadingButtonAction:" destination="jO5-FY-3bu" eventType="touchUpInside" id="RX2-U0-QZD"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-KU-sBg">
+                                        <rect key="frame" x="36" y="41" width="90" height="2"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-6a-x0Y">
+                                        <rect key="frame" x="160" y="8" width="160" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="qsa-CX-NVS"/>
+                                        </constraints>
+                                        <state key="normal" title="模考错题">
+                                            <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dowloadedButtonAction:" destination="jO5-FY-3bu" eventType="touchUpInside" id="9qT-M2-XbD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Lqb-6a-x0Y" secondAttribute="trailing" id="40Y-DW-t6J"/>
+                                    <constraint firstItem="Lqb-6a-x0Y" firstAttribute="width" secondItem="ga9-6m-2lf" secondAttribute="width" id="8Y5-8t-8ZW"/>
+                                    <constraint firstItem="Lqb-6a-x0Y" firstAttribute="leading" secondItem="ga9-6m-2lf" secondAttribute="trailing" id="HK0-4H-5sc"/>
+                                    <constraint firstItem="ga9-6m-2lf" firstAttribute="leading" secondItem="2me-Y8-ST9" secondAttribute="leading" id="Q7c-lY-K8U"/>
+                                    <constraint firstItem="Lqb-6a-x0Y" firstAttribute="leading" secondItem="ga9-6m-2lf" secondAttribute="trailing" id="TdQ-Sg-64U"/>
+                                    <constraint firstAttribute="height" constant="44" id="Xek-tX-rRV"/>
+                                    <constraint firstItem="Lqb-6a-x0Y" firstAttribute="top" secondItem="2me-Y8-ST9" secondAttribute="top" constant="8" id="cra-bm-gfE"/>
+                                    <constraint firstItem="ga9-6m-2lf" firstAttribute="top" secondItem="2me-Y8-ST9" secondAttribute="top" constant="7" id="vJ2-yw-aKz"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2h9-QM-ujF">
+                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownLoad" rowHeight="88" id="Z9r-KT-I07" customClass="DownLoadTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z9r-KT-I07" id="R7g-YX-jdz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jO5-FY-3bu" id="v0e-oe-t5n"/>
+                                    <outlet property="delegate" destination="jO5-FY-3bu" id="iPr-KK-9js"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2me-Y8-ST9" secondAttribute="trailing" constant="-16" id="94T-CK-SUb"/>
+                            <constraint firstItem="8yj-qM-ue7" firstAttribute="top" secondItem="2h9-QM-ujF" secondAttribute="bottom" id="CXf-3H-9bb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2h9-QM-ujF" secondAttribute="trailing" constant="-16" id="GK2-hK-zxy"/>
+                            <constraint firstItem="2h9-QM-ujF" firstAttribute="top" secondItem="2me-Y8-ST9" secondAttribute="bottom" id="Gex-5G-S9C"/>
+                            <constraint firstItem="2h9-QM-ujF" firstAttribute="leading" secondItem="0Zt-0U-HGu" secondAttribute="leadingMargin" constant="-16" id="HT4-XJ-EiQ"/>
+                            <constraint firstItem="2h9-QM-ujF" firstAttribute="top" secondItem="2me-Y8-ST9" secondAttribute="bottom" id="VhS-en-bwm"/>
+                            <constraint firstItem="2me-Y8-ST9" firstAttribute="top" secondItem="7Mx-61-eQZ" secondAttribute="bottom" id="bVW-lO-kkl"/>
+                            <constraint firstItem="2me-Y8-ST9" firstAttribute="leading" secondItem="0Zt-0U-HGu" secondAttribute="leadingMargin" constant="-16" id="fUk-RD-raK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="错题练习" id="nN6-VB-Td2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="customTableview" destination="2h9-QM-ujF" id="p9Q-CR-jo5"/>
+                        <outlet property="downedButton" destination="Lqb-6a-x0Y" id="deg-4N-pII"/>
+                        <outlet property="downingButton" destination="ga9-6m-2lf" id="JW8-RX-oKc"/>
+                        <outlet property="lineLB" destination="fpf-KU-sBg" id="IVK-We-vUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ya8-kF-ALB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="20"/>
+        </scene>
+        <!--我的练习-->
+        <scene sceneID="dLR-Y6-CAH">
+            <objects>
+                <viewController storyboardIdentifier="MyPracticeViewController" title="我的练习" id="pZu-vF-lQJ" customClass="MyPracticeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KOb-Kg-bkz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOj-TQ-63x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ucP-fs-CUh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDO-9b-Zgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="407"/>
+        </scene>
+        <!--排行榜-->
+        <scene sceneID="lJ8-1Z-4NO">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" title="排行榜" id="rDT-b1-Cla" customClass="ListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hx2-uZ-tV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="mOP-Wt-Fu0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GHj-rU-BsG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maX-Vz-v6g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIY-xY-5L7">
+                                        <rect key="frame" x="0.0" y="7" width="160" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FhW-4e-tO1"/>
+                                        </constraints>
+                                        <state key="normal" title="题霸榜">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downLoadingButtonAction:" destination="rDT-b1-Cla" eventType="touchUpInside" id="FVN-YL-j6N"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhk-1O-gSs">
+                                        <rect key="frame" x="36" y="41" width="90" height="2"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3r-bC-utp">
+                                        <rect key="frame" x="160" y="8" width="160" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2Z5-2a-k6u"/>
+                                        </constraints>
+                                        <state key="normal" title="学霸榜">
+                                            <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dowloadedButtonAction:" destination="rDT-b1-Cla" eventType="touchUpInside" id="a1V-rF-UBm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CIY-xY-5L7" firstAttribute="leading" secondItem="maX-Vz-v6g" secondAttribute="leading" id="29g-Kv-zJN"/>
+                                    <constraint firstItem="t3r-bC-utp" firstAttribute="leading" secondItem="CIY-xY-5L7" secondAttribute="trailing" id="3Js-Qe-dhA"/>
+                                    <constraint firstAttribute="height" constant="44" id="OyR-oD-S3Q"/>
+                                    <constraint firstItem="t3r-bC-utp" firstAttribute="width" secondItem="CIY-xY-5L7" secondAttribute="width" id="RoH-ie-wLu"/>
+                                    <constraint firstItem="CIY-xY-5L7" firstAttribute="top" secondItem="maX-Vz-v6g" secondAttribute="top" constant="7" id="Xpi-l7-0wu"/>
+                                    <constraint firstItem="t3r-bC-utp" firstAttribute="top" secondItem="maX-Vz-v6g" secondAttribute="top" constant="8" id="bzD-zI-tGb"/>
+                                    <constraint firstItem="t3r-bC-utp" firstAttribute="leading" secondItem="CIY-xY-5L7" secondAttribute="trailing" id="jbo-yf-BFp"/>
+                                    <constraint firstAttribute="trailing" secondItem="t3r-bC-utp" secondAttribute="trailing" id="s2Q-5R-XbK"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-6R-TwR">
+                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownLoad" rowHeight="88" id="IIJ-xw-kwa" customClass="DownLoadTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IIJ-xw-kwa" id="fyZ-LY-YkA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rDT-b1-Cla" id="s75-gS-Lgd"/>
+                                    <outlet property="delegate" destination="rDT-b1-Cla" id="NVx-6q-r7J"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mOP-Wt-Fu0" firstAttribute="top" secondItem="eHv-6R-TwR" secondAttribute="bottom" id="2SW-ft-urm"/>
+                            <constraint firstItem="eHv-6R-TwR" firstAttribute="leading" secondItem="GHj-rU-BsG" secondAttribute="leadingMargin" constant="-16" id="BrK-5b-zVm"/>
+                            <constraint firstItem="eHv-6R-TwR" firstAttribute="top" secondItem="maX-Vz-v6g" secondAttribute="bottom" id="Edv-1y-7jP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eHv-6R-TwR" secondAttribute="trailing" constant="-16" id="IKz-jh-gjD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="maX-Vz-v6g" secondAttribute="trailing" constant="-16" id="UR1-HC-tzq"/>
+                            <constraint firstItem="eHv-6R-TwR" firstAttribute="top" secondItem="maX-Vz-v6g" secondAttribute="bottom" id="WGo-pj-jUs"/>
+                            <constraint firstItem="maX-Vz-v6g" firstAttribute="leading" secondItem="GHj-rU-BsG" secondAttribute="leadingMargin" constant="-16" id="rGA-LB-6eh"/>
+                            <constraint firstItem="maX-Vz-v6g" firstAttribute="top" secondItem="hx2-uZ-tV4" secondAttribute="bottom" id="sQP-WM-ZLO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="错题练习" id="UsN-hY-SPN"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="customTableview" destination="eHv-6R-TwR" id="CIp-D5-WnG"/>
+                        <outlet property="downedButton" destination="t3r-bC-utp" id="Bia-Tg-RJf"/>
+                        <outlet property="downingButton" destination="CIY-xY-5L7" id="fOt-xn-DWr"/>
+                        <outlet property="lineLB" destination="Fhk-1O-gSs" id="QZD-rv-fke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAf-On-PCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="20"/>
+        </scene>
     </scenes>
     <resources>
         <image name="common" width="21" height="14"/>
         <image name="qq_icon_nor" width="34" height="34"/>
         <image name="rr_icon_nor" width="34" height="34"/>
         <image name="rr_icon_press" width="34" height="35"/>
+        <image name="shijuan_favor_pic" width="28" height="26"/>
+        <image name="shijuan_ka_pic" width="28" height="26"/>
+        <image name="shijuan_setting_pic" width="28" height="26"/>
+        <image name="shijuan_timer" width="28" height="26"/>
         <image name="signIn_n" width="28" height="28"/>
         <image name="sina_icon_nor" width="34" height="34"/>
         <image name="sina_icon_press" width="34" height="33"/>

@@ -53,6 +53,10 @@
     // Set up the cell.
     NSString *text;
     if (tableView == self.cityTableView) {
+        UIImageView *imge = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 22, 20)];
+        imge.backgroundColor = [UIColor clearColor];
+        imge.image = [UIImage imageNamed:@"exam_selected"];
+        cell.accessoryView = imge;
         text = self.cities[indexPath.row];
     }else if (tableView == self.customTableView) {
         text = self.states[indexPath.row];

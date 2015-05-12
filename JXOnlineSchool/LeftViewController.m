@@ -11,6 +11,8 @@
 #import "MyCollectionViewController.h"
 #import "ChangeNicknameViewController.h"
 #import "UserCenterViewController.h"
+#import "MyPracticeViewController.h"
+#import "ListViewController.h"
 
 @interface LeftViewController ()
 @property (nonatomic, strong) NSArray *settingWords;
@@ -88,12 +90,13 @@
         switch (indexPath.row) {
             case 0:
             {
-                
+                vc = [MyPracticeViewController CreateFromMainStoryboard];
+
             }
                 break;
             case 1:
             {
-                
+                vc = [ListViewController CreateFromMainStoryboard];
             }
                 break;
             case 2:

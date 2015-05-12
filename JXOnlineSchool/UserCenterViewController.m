@@ -7,6 +7,8 @@
 //
 
 #import "UserCenterViewController.h"
+#import "LocationViewController.h"
+#import "CourseViewController.h"
 
 @interface UserCenterViewController ()
 
@@ -79,7 +81,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.section == 2&&indexPath.row == 1) {//报考地
+        [self.navigationController pushViewController:[LocationViewController CreateFromMainStoryboard] animated:YES];
+    }else if (indexPath.section == 2&&indexPath.row == 2) {//考试科目
+        [self.navigationController pushViewController:[CourseViewController CreateFromMainStoryboard] animated:YES];
+    }
 }
 
 

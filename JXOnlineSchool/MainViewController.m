@@ -7,7 +7,13 @@
 //
 
 #import "MainViewController.h"
-#import "SearchController.h"
+#import "IntelligentPracticeViewController.h"
+#import "MistakePracticeViewController.h"
+#import "SpecialPracticeViewController.h"
+#import "MoldTestViewController.h"
+#import "AllMoldTestViewController.h"
+#import "AssessmentViewController.h"
+#import "MyPracticeViewController.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -18,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    self.dataArray = @[@"快速智能练习",@"专项智能练习",@"组卷模考",@"真题模考",@"全真模考",@"能力评估报告"];
+    self.dataArray = @[@"快速智能练习",@"专项智能练习",@"组卷模考",@"真题模考",@"错题练习",@"全真模考"];
     [self initSubviews];
 }
 
@@ -91,7 +97,7 @@
     
     NSInteger scrollViewHeight = kScreenHeight-lb.frame.size.height-headerV.frame.size.height;
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, headerV.frame.size.height + 15+20, kScreenWidth, scrollViewHeight)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, headerV.frame.size.height + 15+20, kScreenWidth-60, scrollViewHeight)];
     scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator =  NO;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -126,45 +132,78 @@
         [scrollView addSubview:button];
         button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             UIButton *sender = (UIButton *)input;
+            UINavigationController *nav;
             switch (sender.tag) {
                 case 100:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[IntelligentPracticeViewController CreateFromMainStoryboard]];
                 }
                     break;
                 case 101:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[SpecialPracticeViewController CreateFromMainStoryboard]];
+
                 }
                     break;
                 case 102:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[IntelligentPracticeViewController CreateFromMainStoryboard]];
+
                 }
                     break;
                 case 103:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[MoldTestViewController CreateFromMainStoryboard]];
+
                 }
                     break;
                 case 104:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[MistakePracticeViewController CreateFromMainStoryboard]];
                 }
                     break;
                 case 105:
                 {
-                    
+                    nav = [[UINavigationController alloc] initWithRootViewController:[AllMoldTestViewController CreateFromMainStoryboard]];
+
                 }
                     break;
                     
                 default:
                     break;
             }
+            [self presentViewController: nav animated:YES completion:^{
+                
+            }];
             return [RACSignal empty];
         }];
-  
     }
+
+    
+    UIButton *pacticeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    pacticeBtn.frame = CGRectMake(kScreenWidth-42,kScreenHeight - 160, 40, 40);
+    pacticeBtn.backgroundColor = [UIColor clearColor];
+    [pacticeBtn setImage: [UIImage imageNamed: @"signIn_n"] forState: UIControlStateNormal];
+    pacticeBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[AssessmentViewController CreateFromMainStoryboard]];
+        [self presentViewController:nav animated:YES completion:^{
+            
+        }];
+        return [RACSignal empty];
+    }];
+    UIButton *assessment = [UIButton buttonWithType:UIButtonTypeCustom];
+    assessment.frame = CGRectMake(kScreenWidth-42, kScreenHeight - 120, 40, 40);
+    assessment.backgroundColor = [UIColor clearColor];
+    [assessment setImage: [UIImage imageNamed: @"signIn_n"] forState: UIControlStateNormal];
+    assessment.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[MyPracticeViewController CreateFromMainStoryboard]];
+        [self presentViewController:nav animated:YES completion:^{
+            
+        }];
+        return [RACSignal empty];
+    }];
+    [self.view addSubview:pacticeBtn];
+    [self.view addSubview:assessment];
 
     
 }

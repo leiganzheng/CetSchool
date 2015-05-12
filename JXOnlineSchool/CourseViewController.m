@@ -42,9 +42,14 @@
         // Use the default cell style.
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
         cell.textLabel.textColor = kCyColorFromRGB(121, 121, 121);
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     // Set up the cell.
+    UIImageView *imge = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 22, 20)];
+    imge.backgroundColor = [UIColor clearColor];
+    imge.image = [UIImage imageNamed:@"exam_selected"];
+    cell.accessoryView = imge;
+    
     cell.textLabel.text = _settingWords[indexPath.row];
     return cell;
 }
