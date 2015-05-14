@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoldTestViewController : MainBaseViewController
+@interface MoldTestViewController : MainBaseViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end

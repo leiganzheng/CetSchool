@@ -18,11 +18,11 @@ typedef enum {
 @interface ListViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSArray *dataArrayDownloaded;
-@property (nonatomic, strong) NSArray *dataArrayDetail;
 @property (nonatomic,assign) DownloadType type;
 @property (weak, nonatomic) IBOutlet UILabel *lineLB;
 @property (weak, nonatomic) IBOutlet UIButton *downedButton;
 @property (weak, nonatomic) IBOutlet UIButton *downingButton;
+@property (weak, nonatomic) IBOutlet UILabel *customTitle;
 @property (weak, nonatomic) IBOutlet UITableView *customTableview;
 @end
 
@@ -30,10 +30,12 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataArray = @[@"2015年二级建造师报导入课--为什么学习二级建造师",@"2015年二级建造师报导入课--为什么学习二级建造师"];
-    self.dataArrayDownloaded = @[@"2013年二级建造师报导入课--为什么学习二级建造师"];
-    self.dataArrayDetail = @[@"0.0M/0.0M",@"0.0M/0.0M"];
+    self.dataArray = @[@"1",@"2",@"3",@"4",@"5"];
+    self.dataArrayDownloaded = @[@"1",@"2",@"3",@"4",@"5"];
     self.type = kDownloading;
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
+    v.backgroundColor = [UIColor redColor];
+    self.customTableview.tableHeaderView = v;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,15 +65,15 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"DownLoad";
+    static NSString *MyIdentifier = @"Load";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil)
     {
         // Use the default cell style.
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier];
-        cell.backgroundColor = kBgColor;
     }
     // Set up the cell.
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     switch (self.type) {
         case 0:
         {
@@ -88,11 +90,10 @@ typedef enum {
     return cell;
 }
 
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kCellHeight;
+    return 44;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

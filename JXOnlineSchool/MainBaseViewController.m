@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIButton *home = [UIButton buttonWithType:UIButtonTypeCustom];
-    home.frame = CGRectMake(0, 0 ,40, 40);
+    home.frame = CGRectMake(0, 0 ,24, 22);
     home.backgroundColor = [UIColor clearColor];
     [home setImage: [UIImage imageNamed: @"home_back_pic_night"] forState: UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:home];

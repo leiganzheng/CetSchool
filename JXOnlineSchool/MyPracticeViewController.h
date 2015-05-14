@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyPracticeViewController : MainBaseViewController
+@interface MyPracticeViewController : MainBaseViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end
