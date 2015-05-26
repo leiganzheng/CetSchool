@@ -14,6 +14,7 @@
 #import "AllMoldTestViewController.h"
 #import "AssessmentViewController.h"
 #import "MyPracticeViewController.h"
+#import "DataMannagerCenter.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -83,6 +84,16 @@
     [headerV addSubview:searchBtn];
     
     searchBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        
+        //TODO:
+        [[DataMannagerCenter sharedInstance] loginWith:nil And:nil Finish:^(id error, id obj) {
+            if (obj) {
+                
+            }else{
+                
+            }
+        }];
+        
         return [RACSignal empty];
     }];
     
